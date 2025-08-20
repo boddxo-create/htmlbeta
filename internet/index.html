@@ -4,237 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KENOMARKET - Каталог старых приложений для Android</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000000;
-            color: #ffffff;
-            line-height: 1.4;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin-bottom: 10px;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.1);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #cccccc;
-            margin-bottom: 30px;
-        }
-
-        .apps-title {
-            font-size: 1.8rem;
-            color: #ffffff;
-            text-align: center;
-            margin-bottom: 25px;
-            font-weight: bold;
-        }
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .category-btn {
-            display: block;
-            padding: 12px 20px;
-            background: linear-gradient(to bottom, #4CAF50, #45a049);
-            color: white;
-            text-decoration: none;
-            border: 1px solid #3e8e41;
-            font-size: 1rem;
-            text-align: center;
-            transition: all 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .category-btn:hover {
-            background: linear-gradient(to bottom, #45a049, #4CAF50);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        }
-
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .app-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-        }
-
-        .app-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 10px;
-            border: 1px solid #333;
-        }
-
-        .app-name {
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #ffffff;
-        }
-
-        .app-requirement {
-            font-size: 0.9rem;
-            color: #cccccc;
-            margin-bottom: 15px;
-        }
-
-        .download-btn {
-            padding: 8px 16px;
-            background: linear-gradient(to bottom, #4CAF50, #45a049);
-            color: white;
-            text-decoration: none;
-            border: 1px solid #3e8e41;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            display: inline-block;
-        }
-
-        .download-btn:hover {
-            background: linear-gradient(to bottom, #45a049, #4CAF50);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        }
-
-        .more-apps {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .more-apps-btn {
-            padding: 12px 24px;
-            background: linear-gradient(to bottom, #4CAF50, #45a049);
-            color: white;
-            text-decoration: none;
-            border: 1px solid #3e8e41;
-            font-size: 1.1rem;
-            transition: all 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            display: inline-block;
-        }
-
-        .more-apps-btn:hover {
-            background: linear-gradient(to bottom, #45a049, #4CAF50);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        }
-
-        .description {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            padding: 20px;
-            background: #1a1a1a;
-            border: 1px solid #333;
-            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-        }
-
-        .description p {
-            font-size: 1rem;
-            color: #cccccc;
-            line-height: 1.6;
-        }
-
-        .footer-container {
-            width: 100%;
-            border: none;
-            margin: 0;
-            padding: 0;
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
-            .apps-title {
-                font-size: 1.9rem;
-            }
-
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .apps-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .app-card {
-                padding: 10px;
-            }
-
-            .app-icon {
-                width: 48px;
-                height: 48px;
-            }
-
-            .categories {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .category-btn {
-                padding: 10px 15px;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.7rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .app-name {
-                font-size: 1rem;
-            }
-
-            .app-requirement {
-                font-size: 0.8rem;
-            }
-
-            .download-btn {
-                padding: 6px 12px;
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <div class="container">
@@ -280,112 +50,116 @@
                 <a href="https://www.kenomarket.pl/internet/ucbrowser" class="download-btn">Скачать</a>
             </div>
         </div>
-        <div class="apps-grid">
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/facebooklite.png" alt="Facebook Lite" class="app-icon">
-                <div class="app-name">Facebook Lite</div>
-                <div class="app-requirement">Android 2.3+</div>
-                <a href="https://www.kenomarket.pl/internet/facebooklite" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/operamini.png" alt="Opera Mini" class="app-icon">
-                <div class="app-name">Opera Mini</div>
-                <div class="app-requirement">Android 1.5+</div>
-                <a href="https://www.kenomarket.pl/internet/operamini" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/firefoxbrowser.png" alt="Firefox" class="app-icon">
-                <div class="app-name">Firefox</div>
-                <div class="app-requirement">Android 2.2+</div>
-                <a href="https://www.kenomarket.pl/internet/firefox" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/ucbrowser.png" alt="UC Browser" class="app-icon">
-                <div class="app-name">UC Browser</div>
-                <div class="app-requirement">Android 2.2+</div>
-                <a href="https://www.kenomarket.pl/internet/ucbrowser" class="download-btn">Скачать</a>
-            </div>
-        </div>
-        <div class="apps-grid">
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/facebooklite.png" alt="Facebook Lite" class="app-icon">
-                <div class="app-name">Facebook Lite</div>
-                <div class="app-requirement">Android 2.3+</div>
-                <a href="https://www.kenomarket.pl/internet/facebooklite" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/operamini.png" alt="Opera Mini" class="app-icon">
-                <div class="app-name">Opera Mini</div>
-                <div class="app-requirement">Android 1.5+</div>
-                <a href="https://www.kenomarket.pl/internet/operamini" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/firefoxbrowser.png" alt="Firefox" class="app-icon">
-                <div class="app-name">Firefox</div>
-                <div class="app-requirement">Android 2.2+</div>
-                <a href="https://www.kenomarket.pl/internet/firefox" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/ucbrowser.png" alt="UC Browser" class="app-icon">
-                <div class="app-name">UC Browser</div>
-                <div class="app-requirement">Android 2.2+</div>
-                <a href="https://www.kenomarket.pl/internet/ucbrowser" class="download-btn">Скачать</a>
-            </div>
-        </div>
-        <div class="apps-grid">
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/facebooklite.png" alt="Facebook Lite" class="app-icon">
-                <div class="app-name">Facebook Lite</div>
-                <div class="app-requirement">Android 2.3+</div>
-                <a href="https://www.kenomarket.pl/internet/facebooklite" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/operamini.png" alt="Opera Mini" class="app-icon">
-                <div class="app-name">Opera Mini</div>
-                <div class="app-requirement">Android 1.5+</div>
-                <a href="https://www.kenomarket.pl/internet/operamini" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/firefoxbrowser.png" alt="Firefox" class="app-icon">
-                <div class="app-name">Firefox</div>
-                <div class="app-requirement">Android 2.2+</div>
-                <a href="https://www.kenomarket.pl/internet/firefox" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/ucbrowser.png" alt="UC Browser" class="app-icon">
-                <div class="app-name">UC Browser</div>
-                <div class="app-requirement">Android 2.2+</div>
-                <a href="https://www.kenomarket.pl/internet/ucbrowser" class="download-btn">Скачать</a>
-            </div>
-        </div>
-        <div class="apps-grid">
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/facebooklite.png" alt="Facebook Lite" class="app-icon">
-                <div class="app-name">Facebook Lite</div>
-                <div class="app-requirement">Android 2.3+</div>
-                <a href="https://www.kenomarket.pl/internet/facebooklite" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/operamini.png" alt="Opera Mini" class="app-icon">
-                <div class="app-name">Opera Mini</div>
-                <div class="app-requirement">Android 1.5+</div>
-                <a href="https://www.kenomarket.pl/internet/operamini" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/firefoxbrowser.png" alt="Firefox" class="app-icon">
-                <div class="app-name">Firefox</div>
-                <div class="app-requirement">Android 2.2+</div>
-                <a href="https://www.kenomarket.pl/internet/firefox" class="download-btn">Скачать</a>
-            </div>
-            <div class="app-card">
-                <img src="https://kenomarket.w10.site/about/ucbrowser.png" alt="UC Browser" class="app-icon">
-                <div class="app-name">UC Browser</div>
-                <div class="app-requirement">Android 2.2+</div>
-                <a href="https://www.kenomarket.pl/internet/ucbrowser" class="download-btn">Скачать</a>
-            </div>
-        </div>
-
         
+        <div class="apps-grid">
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/facebooklite.png" alt="Facebook Lite" class="app-icon">
+                <div class="app-name">Facebook Lite</div>
+                <div class="app-requirement">Android 2.3+</div>
+                <a href="https://www.kenomarket.pl/internet/facebooklite" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/operamini.png" alt="Opera Mini" class="app-icon">
+                <div class="app-name">Opera Mini</div>
+                <div class="app-requirement">Android 1.5+</div>
+                <a href="https://www.kenomarket.pl/internet/operamini" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/firefoxbrowser.png" alt="Firefox" class="app-icon">
+                <div class="app-name">Firefox</div>
+                <div class="app-requirement">Android 2.2+</div>
+                <a href="https://www.kenomarket.pl/internet/firefox" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/ucbrowser.png" alt="UC Browser" class="app-icon">
+                <div class="app-name">UC Browser</div>
+                <div class="app-requirement">Android 2.2+</div>
+                <a href="https://www.kenomarket.pl/internet/ucbrowser" class="download-btn">Скачать</a>
+            </div>
+        </div>
+        
+        <div class="apps-grid">
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/facebooklite.png" alt="Facebook Lite" class="app-icon">
+                <div class="app-name">Facebook Lite</div>
+                <div class="app-requirement">Android 2.3+</div>
+                <a href="https://www.kenomarket.pl/internet/facebooklite" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/operamini.png" alt="Opera Mini" class="app-icon">
+                <div class="app-name">Opera Mini</div>
+                <div class="app-requirement">Android 1.5+</div>
+                <a href="https://www.kenomarket.pl/internet/operamini" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/firefoxbrowser.png" alt="Firefox" class="app-icon">
+                <div class="app-name">Firefox</div>
+                <div class="app-requirement">Android 2.2+</div>
+                <a href="https://www.kenomarket.pl/internet/firefox" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/ucbrowser.png" alt="UC Browser" class="app-icon">
+                <div class="app-name">UC Browser</div>
+                <div class="app-requirement">Android 2.2+</div>
+                <a href="https://www.kenomarket.pl/internet/ucbrowser" class="download-btn">Скачать</a>
+            </div>
+        </div>
+        
+        <div class="apps-grid">
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/facebooklite.png" alt="Facebook Lite" class="app-icon">
+                <div class="app-name">Facebook Lite</div>
+                <div class="app-requirement">Android 2.3+</div>
+                <a href="https://www.kenomarket.pl/internet/facebooklite" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/operamini.png" alt="Opera Mini" class="app-icon">
+                <div class="app-name">Opera Mini</div>
+                <div class="app-requirement">Android 1.5+</div>
+                <a href="https://www.kenomarket.pl/internet/operamini" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/firefoxbrowser.png" alt="Firefox" class="app-icon">
+                <div class="app-name">Firefox</div>
+                <div class="app-requirement">Android 2.2+</div>
+                <a href="https://www.kenomarket.pl/internet/firefox" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/ucbrowser.png" alt="UC Browser" class="app-icon">
+                <div class="app-name">UC Browser</div>
+                <div class="app-requirement">Android 2.2+</div>
+                <a href="https://www.kenomarket.pl/internet/ucbrowser" class="download-btn">Скачать</a>
+            </div>
+        </div>
+        
+        <div class="apps-grid">
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/facebooklite.png" alt="Facebook Lite" class="app-icon">
+                <div class="app-name">Facebook Lite</div>
+                <div class="app-requirement">Android 2.3+</div>
+                <a href="https://www.kenomarket.pl/internet/facebooklite" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/operamini.png" alt="Opera Mini" class="app-icon">
+                <div class="app-name">Opera Mini</div>
+                <div class="app-requirement">Android 1.5+</div>
+                <a href="https://www.kenomarket.pl/internet/operamini" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/firefoxbrowser.png" alt="Firefox" class="app-icon">
+                <div class="app-name">Firefox</div>
+                <div class="app-requirement">Android 2.2+</div>
+                <a href="https://www.kenomarket.pl/internet/firefox" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="https://kenomarket.w10.site/about/ucbrowser.png" alt="UC Browser" class="app-icon">
+                <div class="app-name">UC Browser</div>
+                <div class="app-requirement">Android 2.2+</div>
+                <a href="https://www.kenomarket.pl/internet/ucbrowser" class="download-btn">Скачать</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Подключение футера с внешнего сервера -->
     <iframe src="https://beta.kenomarket.pl/legalelement.html" 
             class="footer-container" 
