@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Lite - KENOMARKET</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="container">
+        <div class="app-info">
+            <div class="app-info-top">
+                <img src="/internet/facebooklite.jpg" alt="Facebook Lite" class="app-icon-large">
+                <div class="app-details">
+                    <div class="app-name-large">Facebook Lite</div>
+                    <div class="app-requirement-large">Android 2.3+</div>
+                    <div class="app-architecture">arm-v6+</div>
+                </div>
+            </div>
+            <a href="www.kenomarket.pl/internet/facebooklite" class="download-btn-large">Скачать</a>
+        </div>
+
+        <div class="screenshots">
+            <div class="screenshots-title">Скриншоты</div>
+            <div class="screenshots-grid">
+                <img src="/internet/facebooklite/screenshot1.jpg" alt="Скриншот 1" class="screenshot">
+                <img src="/internet/facebooklite/screenshot2.jpg" alt="Скриншот 2" class="screenshot">
+            </div>
+        </div>
+
+        <div class="description-block">
+            <div class="description-title">Описание</div>
+            <div class="description-text">
+                Облегченная версия Facebook для старых устройств
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script>
+        // Загружаем header
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-container').innerHTML = html;
+            })
+            .catch(error => console.error('Ошибка загрузки header:', error));
+
+        // Загружаем footer
+        fetch('/legalelement.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-container').innerHTML = html;
+            })
+            .catch(error => console.error('Ошибка загрузки footer:', error));
+    </script>
+</body>
+</html>
