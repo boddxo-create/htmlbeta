@@ -7,18 +7,14 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>KENOMARKET</h1>
-            <div class="subtitle">Только проверенные старые приложения</div>
-        </div>
-
-        <div class="categories">
-            <a href="/" class="category-btn">🏠 Главная</a>
-            <a href="https://www.kenomarket.pl/apps" class="category-btn">💻 Программы</a>
-            <a href="https://www.kenomarket.pl/games" class="category-btn">🎮 Игры</a>
-            <a href="https://www.kenomarket.pl/customs" class="category-btn">🎨 Кастомизация</a>
-        </div>
+    <!-- Подключение шапки с внешнего сервера -->
+    <iframe src="/header.html" 
+            class="header-container" 
+            scrolling="no" 
+            frameborder="0"
+            sandbox="allow-scripts allow-same-origin allow-top-navigation"
+            onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px'">
+    </iframe>
 
         <div class="apps-section">
             <h2 class="apps-title">Интернет</h2>
