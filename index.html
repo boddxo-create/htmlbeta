@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KENOMARKET - Каталог старых приложений для Android</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/css/kenomarket-styles.css">
 </head>
 <body>
+    <!-- Подключение шапки с внешнего сервера -->
+    <iframe src="/header.html" 
+            class="header-container" 
+            scrolling="no" 
+            frameborder="0"
+            sandbox="allow-scripts allow-same-origin allow-top-navigation"
+            onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px'">
+    </iframe>
+
     <div class="container">
-        <div class="header">
-            <h1>KENOMARKET</h1>
-            <div class="subtitle">Только проверенные старые приложения</div>
-        </div>
-
-        <div class="categories">
-            <a href="https://www.kenomarket.pl/apps" class="category-btn">💻 Программы</a>
-            <a href="/internet" class="category-btn">🌐 Интернет</a>
-            <a href="https://www.kenomarket.pl/games" class="category-btn">🎮 Игры</a>
-            <a href="https://www.kenomarket.pl/customs" class="category-btn">🎨 Кастомизация</a>
-        </div>
-
         <div class="apps-section">
             <h2 class="apps-title">Лучшие приложения</h2>
         </div>
@@ -58,10 +55,6 @@
         <div class="description">
             <p>На нашем сайте собраны только проверенные приложения для выживания на старых версиях Android. Мы тщательно отбираем каждое приложение, чтобы обеспечить совместимость с устаревшими устройствами и гарантировать их стабильную работу. Наша цель - продлить жизнь вашим старым Android-устройствам, предоставив доступ к качественному программному обеспечению.</p>
         </div>
-        
-        <div class="more-apps">
-            <a href="http://about.kenomarket.pl/telegram" class="more-apps-btn">Мы в Telegram</a>
-        </div>
     </div>
 
     <!-- Подключение футера с внешнего сервера -->
@@ -74,22 +67,26 @@
     </iframe>
 
     <script>
-        // Автоматическое изменение высоты iframe под содержимое футера
-        function resizeIframe() {
-            const iframe = document.querySelector('.footer-container');
-            if (iframe) {
+        // Автоматическое изменение высоты iframe под содержимое
+        function resizeIframes() {
+            const iframes = document.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
                 try {
                     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
                 } catch (e) {
                     // Если возникают проблемы с CORS, устанавливаем фиксированную высоту
-                    iframe.style.height = '200px';
+                    if (iframe.classList.contains('header-container')) {
+                        iframe.style.height = '180px';
+                    } else {
+                        iframe.style.height = '200px';
+                    }
                 }
-            }
+            });
         }
 
         // Изменяем размер при загрузке страницы и изменении размера окна
-        window.addEventListener('load', resizeIframe);
-        window.addEventListener('resize', resizeIframe);
+        window.addEventListener('load', resizeIframes);
+        window.addEventListener('resize', resizeIframes);
     </script>
 </body>
 </html>
