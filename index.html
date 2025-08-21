@@ -70,27 +70,31 @@
             onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px'">
     </iframe>
 
+ <!-- Подключение футера с внешнего сервера -->
+    <iframe src="/legalelement.html" 
+            class="footer-container" 
+            scrolling="no" 
+            frameborder="0"
+            onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px'">
+    </iframe>
+
     <script>
-        // Автоматическое изменение высоты iframe под содержимое
-        function resizeIframes() {
-            const iframes = document.querySelectorAll('iframe');
-            iframes.forEach(iframe => {
+        // Автоматическое изменение высоты iframe под содержимое футера
+        function resizeIframe() {
+            const iframe = document.querySelector('.footer-container');
+            if (iframe) {
                 try {
                     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
                 } catch (e) {
                     // Если возникают проблемы с CORS, устанавливаем фиксированную высоту
-                    if (iframe.classList.contains('header-container')) {
-                        iframe.style.height = '180px';
-                    } else {
-                        iframe.style.height = '200px';
-                    }
+                    iframe.style.height = '200px';
                 }
-            });
+            }
         }
 
         // Изменяем размер при загрузке страницы и изменении размера окна
-        window.addEventListener('load', resizeIframes);
-        window.addEventListener('resize', resizeIframes);
+        window.addEventListener('load', resizeIframe);
+        window.addEventListener('resize', resizeIframe);
     </script>
 </body>
 </html>
