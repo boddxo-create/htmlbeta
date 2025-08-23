@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opera Mini - KENOMARKET</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="container">
+        <div class="app-info">
+            <div class="app-info-top">
+                <img src="/internet/operamini.png" alt="Opera Mini" class="app-icon-large">
+                <div class="app-details">
+                    <div class="app-name-large">Opera Mini</div>
+                    <div class="app-requirement-large">Android 1.5+</div>
+                    <div class="app-architecture">Архитектура: ARMv6+</div>
+                </div>
+            </div>
+          <a href="operamini_2-3.apk" class="download-btn-large">Скачать (2.3+)</a>
+          <a href="/internet/operamini/v" class="download-btn-large blue-variant">Другие Варианты</a>
+        </div>
+
+        <div class="screenshots">
+            <div class="screenshots-title">Скриншоты</div>
+            <div class="screenshots-grid">
+                <img src="/internet/operamini/screenshot1.png" alt="Скриншот 1" class="screenshot">
+                <img src="/internet/operamini/screenshot2.png" alt="Скриншот 2" class="screenshot">
+                <img src="/internet/operamini/screenshot3.png" alt="Скриншот 3" class="screenshot">
+                <img src="/internet/operamini/screenshot4.png" alt="Скриншот 4" class="screenshot">
+            </div>
+        </div>
+
+        <div class="description-block">
+            <div class="description-title">Описание</div>
+            <div class="description-text">
+                Облегченная версия Opera для старого Android.
+            </div>
+        </div>
+        
+        <div class="apps-section">
+            <h2 class="apps-title">Вам также может понравиться</h2>
+        </div>
+
+        <div class="apps-grid">
+            <div class="app-card">
+                <img src="/internet/tiktoklite.png" alt="TikTok Lite" class="app-icon">
+                <div class="app-name">TikTok Lite</div>
+                <div class="app-requirement">Android 4.1+</div>
+                <a href="/internet/tiktoklite" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="/internet/operamini.png" alt="Opera Mini" class="app-icon">
+                <div class="app-name">Opera Mini</div>
+                <div class="app-requirement">Android 1.5+</div>
+                <a href="https://www.kenomarket.pl/internet/operamini" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="/internet/firefoxbrowser.png" alt="Firefox" class="app-icon">
+                <div class="app-name">Firefox</div>
+                <div class="app-requirement">Android 2.2+</div>
+                <a href="https://www.kenomarket.pl/internet/firefox" class="download-btn">Скачать</a>
+            </div>
+            <div class="app-card">
+                <img src="/internet/ucbrowser.png" alt="UC Browser" class="app-icon">
+                <div class="app-name">UC Browser</div>
+                <div class="app-requirement">Android 2.2+</div>
+                <a href="https://www.kenomarket.pl/internet/ucbrowser" class="download-btn">Скачать</a>
+            </div>
+        </div>
+
+        <div class="more-apps">
+            <a href="/internet" class="more-apps-btn">Больше приложений</a>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script>
+        // Загружаем header
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-container').innerHTML = html;
+            })
+            .catch(error => console.error('Ошибка загрузки header:', error));
+
+        // Загружаем footer
+        fetch('/legalelement.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-container').innerHTML = html;
+            })
+            .catch(error => console.error('Ошибка загрузки footer:', error));
+    </script>
+</body>
+</html>
