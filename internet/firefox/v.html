@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firefox - KENOMARKET</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="container">
+        <div class="app-info">
+            <div class="app-info-top">
+                <img src="/internet/firefox.png" alt="Firefox" class="app-icon-large">
+                <div class="app-details">
+                    <div class="app-name-large">Firefox</div>
+                    <div class="app-requirement-large">Android 2.2+</div>
+                    <div class="app-architecture">Архитектура: ARMv6+</div>
+                </div>
+            </div>
+          <a href="https://drive.usercontent.google.com/download?id=1JQbA09E3MiMXTgCFSWGpF3i8Mmv_ogqJ&export=download&authuser=0" class="download-btn-large">Android 5.0+</a>
+          <a href="https://drive.usercontent.google.com/download?id=1MlkMVDz2GBkC995V8ZT3tD9fivBMp5Bn&export=download&authuser=0" class="download-btn-large">Android 4.1+</a>
+          <a href="https://drive.usercontent.google.com/download?id=1UOgZU8nyOZ3I9MX728I2nHHOvubXKN6g&export=download&authuser=0" class="download-btn-large">Android 4.0+</a>
+          <a href="https://drive.usercontent.google.com/download?id=1VwRhJlS_R3UENpzu_MtN0CpUlTYW5ss_&export=download&authuser=0" class="download-btn-large">Android 2.3+</a>
+		  <a href="https://drive.usercontent.google.com/download?id=15p8i3IPDREOwBgyeixFwaHWv6RhHEejn&export=download&authuser=0" class="download-btn-large">Android 2.2+</a>
+        </div>
+
+    <script>
+        // Загружаем header
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-container').innerHTML = html;
+            })
+            .catch(error => console.error('Ошибка загрузки header:', error));
+
+        // Загружаем footer
+        fetch('/legalelement.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-container').innerHTML = html;
+            })
+            .catch(error => console.error('Ошибка загрузки footer:', error));
+    </script>
+</body>
+</html>
